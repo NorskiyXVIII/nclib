@@ -136,3 +136,27 @@ DArray DArray::operator+(const DArray& other) const {
 	
 	return new_arr;
 }
+
+int DArray::Item::operator ++() {
+	if (index >= current->length || index < 0) return value_err;
+	
+	current->data[index]++;
+	return current->data[index];
+}
+int DArray::Item::operator --() {
+	if (index >= current->length || index < 0) return value_err;
+	
+	current->data[index]--;
+	return current->data[index];
+}
+
+int DArray::Item::operator ++(int) {
+	if (index >= current->length || index < 0) return value_err;
+	
+	return current->data[index]++;
+}
+int DArray::Item::operator --(int) {
+	if (index >= current->length || index < 0) return value_err;
+	
+	return current->data[index]--;
+}

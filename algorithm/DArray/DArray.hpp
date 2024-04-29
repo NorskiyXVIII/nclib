@@ -29,6 +29,13 @@ class DArray {
 		int operator *=(int right);
 		int operator /=(int right);
 		int operator %=(int right);
+		// prefix
+		int operator ++();
+		int operator --();
+		// postfix
+		int operator ++(int);
+		int operator --(int);
+		
 		operator int() const;
 	};
 	

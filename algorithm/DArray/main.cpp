@@ -4,24 +4,15 @@
 int main() {
 	DArray ar1, ar2;
 	
-	for (int i = 0; i < 10; i++) ar1.push_back(i+1);
-	for (int i = 0; i < 5; i++) ar2.push_back(i+15);
+	ar1[10] = 10;
+	ar1[3] = 5;
 	
-	DArray ar3 = ar1 + ar2;
+	int v1 = ar1[3]--;
+	int v2 = --ar1[10];
 	
-	std::cout << ar3.size() << " " << ar3.get_capacity() << std::endl;
+	std::cout << v1 << ' ' << v2 << std::endl;
 	
-	for (int i = 0; i < ar3.size(); i++) {
-		std::cout << ar3.get_data()[i] << " ";
-	}
-	std::cout << std::endl;
-	for (int i = 0; i < ar2.size(); i++) {
-		std::cout << ar2.get_data()[i] << " ";
-	}
-	std::cout << std::endl;
-	for (int i = 0; i < ar1.size(); i++) {
-		std::cout << ar1.get_data()[i] << " ";
-	}
+	for (int i = 0; i < ar1.size(); i++) std::cout << ar1.get_data()[i] << ' ';
 	std::cout << std::endl;
 	return 0;
 }
